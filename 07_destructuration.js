@@ -27,7 +27,9 @@ console.log(extractFirstTwo(tab))
  * exemple: [1, 2, 3] => [2, 3]
  */
 
-const extractRest = () => { return [first, ...rest] = tab;}
+const extractRest = () => {[first, ...rest] = tab;
+    return [...rest]    
+}
 
 console.log(extractRest(tab))
 
@@ -43,7 +45,11 @@ console.log(extractRest(tab))
  * - interdiction d'utiliser l'opérateur "." pour accéder au champ "name"
  */
 
-const extractName = () => {}
+let obj = {name: "toto", age: 42}
+
+const extractName = () => {
+    return 
+}
 
 /**
  * utilisez la décomposition pour retourner l'objet utilisateur sans le champ "password"
