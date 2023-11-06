@@ -11,8 +11,20 @@
  *    - ne pas utiliser async await
  * 
  */
+
+
+
 const usingThen = (cb) => {
+    new Promise((resolve, reject) => {
+        setTimeout(() => { resolve() },
+            cb
+        );
+    }).then(() =>
+        console.log("fini")
+    )
 }
+
+usingThen(5000)
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -25,9 +37,16 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
-
+const usingAwait = async (cb) => {
+    let prom = new Promise((resolve, reject) => {
+        setTimeout(() => {resolve(1)},
+            cb
+        )
+})
+    return await prom
 }
+
+console.log(usingAwait(2000))
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
@@ -49,4 +68,4 @@ const apiResponse = async (url) => {
 }
 
 
-module.exports = {usingThen, usingAwait, apiResponse};
+module.exports = { usingThen, usingAwait, apiResponse };
