@@ -11,7 +11,7 @@
   */
 
 const multiplyByTwo = (array) => {
-      array.map((i) =>  i * 2)
+      array.map(e =>  e * 2)
 }
 
 
@@ -40,7 +40,7 @@ const filterNameStartByA = (array) => {
   */
 
 const sum = (array) => {
-	array.reduce()
+	array.reduce((acc, e ) => acc + e)
 }
 
 /**
@@ -62,7 +62,17 @@ const sum = (array) => {
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const findUserById = (array, id) => {}
+const findUserById = (array, id) => {
+	return array.find(e => e.id === id)
+}
+
+
+console.log(findUserById( [
+	{id: 1, name: 'John'},
+	{id: 2, name: 'Doe'},
+	{id: 3, name: 'Foo'},
+	{id: 4, name: 'Bar'},
+	], 3))
 
 
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
