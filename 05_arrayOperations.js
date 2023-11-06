@@ -11,9 +11,10 @@
   */
 
 const multiplyByTwo = (array) => {
-      array.map(e =>  e * 2)
+    return array.map(e =>  e * 2)
 }
 
+console.log(multiplyByTwo([1, 2, 3, 4]))
 
 /**
  * Utiliser la fonction .filter sur le tableau passé en paramètre
@@ -26,8 +27,11 @@ const multiplyByTwo = (array) => {
   */
 
 const filterNameStartByA = (array) => {
-	array.filterNameStartByA("A")
+	return array.filter((e) => e[0] === "A")
 }
+
+console.log(filterNameStartByA(["Carolane", "Guillaume", "alphonse", "Albert"]))
+
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
@@ -40,8 +44,10 @@ const filterNameStartByA = (array) => {
   */
 
 const sum = (array) => {
-	array.reduce((acc, e ) => acc + e)
+	return array.reduce((acc, e ) => acc + e)
 }
+
+console.log(sum([1, 2, 3, 4]))
 
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
