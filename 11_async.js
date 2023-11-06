@@ -39,7 +39,7 @@ usingThen(5000)
 
 const usingAwait = async (cb) => {
     let prom = new Promise((resolve, reject) => {
-        setTimeout(() => {resolve(1)},
+        setTimeout(() => {resolve},
             cb
         )
 })
@@ -60,12 +60,17 @@ console.log(usingAwait(2000))
  * url de test: https://jsonplaceholder.typicode.com/todos/1
  */
 
+
+
 //décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
+const axios = require("axios");
+let url = "https://jsonplaceholder.typicode.com/todos/1"
 
 const apiResponse = async (url) => {
+    const resp = await axios.get(url)
+    console.log(typeof(resp))
+    }
 
-}
-
+apiResponse(url)
 
 module.exports = { usingThen, usingAwait, apiResponse };
