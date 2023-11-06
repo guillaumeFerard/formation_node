@@ -12,7 +12,13 @@
  *  - interdiction d'utiliser slice ou splice
  */
 
-const extractFirstTwo = () => {}
+tab = [1, 2, 3]
+
+const extractFirstTwo = tab => {[first] = tab;
+    return first        
+}
+
+console.log(extractFirstTwo(tab))
 
 /**
  * utilisez la décomposition pour extraire la premiere case du tableau et le reste du tableau
@@ -21,7 +27,9 @@ const extractFirstTwo = () => {}
  * exemple: [1, 2, 3] => [2, 3]
  */
 
-const extractRest = () => {}
+const extractRest = () => { return [first, ...rest] = tab;}
+
+console.log(extractRest(tab))
 
 /**
  * utilisez la décomposition pour extraire le champ "name" de l'objet passé en paramètre

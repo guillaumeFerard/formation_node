@@ -8,7 +8,13 @@
  *  - for, foreach, while, do while sont interdits
  */
 
-const concat = (arr1, arr2) => {}
+arr1 = [1, 2]
+arr2 = [3, 4]
+
+const concat = (arr1, arr2) => [...arr1, ...arr2]
+
+console.log(concat(arr1, arr2))
+
 
 /**
  * utiliser l'opérateur de composition ... afin d'ajouter un élément à un tableau
@@ -19,7 +25,9 @@ const concat = (arr1, arr2) => {}
  * - ne pas utiliser la méthode push
  */
 
-const push = (arr, item) => {}
+const push = (arr, item) => [...arr, item]
+
+console.log(push(arr1, 4))
 
 /**
  * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
@@ -27,7 +35,19 @@ const push = (arr, item) => {}
  * ex: {a: 1, b: 2}, {c: 3, d: 4} => {a: 1, b: 2, c: 3, d: 4}
  */
 
-const merge = (obj1, obj2) => {}
+obj1 = {
+    user : "t",
+    num: 2
+}
+
+obj2 = {
+    test : "r",
+    test2 : 3
+}
+
+const merge = (obj1, obj2) => ({...obj1, ...obj2})
+
+console.log(merge(obj1, obj2))
 
 /**
  * utiliser l'opérateur de composition ... afin de modifier la propriété name de l'objet
@@ -38,7 +58,10 @@ const merge = (obj1, obj2) => {}
  *  - interdiction d'utiliser l'opérateur d'affectation "="
  */
 
-const setName = (obj, name) => {}
+let tab = {name: 'toto'}
+const setName = (obj, name) => ({...obj, name: name})
+
+console.log(setName(tab, "titi"))
 
 // astuce: {...obj} crée une copie de l'objet, c'est un des principes de l'immutabilité et évite les problèmes de référence
 module.exports = {concat, push, merge, setName}
