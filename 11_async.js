@@ -43,7 +43,7 @@ const usingAwait = async (cb) => {
             cb
         )
 })
-    return await prom
+    await prom
 }
 
 console.log(usingAwait(2000))
@@ -62,13 +62,14 @@ console.log(usingAwait(2000))
 
 
 
-//décommentez la ligne suivante une fois le package installé
+
 const axios = require("axios");
 let url = "https://jsonplaceholder.typicode.com/todos/1"
 
 const apiResponse = async (url) => {
-    const resp = await axios.get(url)
-    console.log(typeof(resp))
+    const resp = await axios.get(url);
+    console.log(typeof(resp));
+    console.log(resp.data)
     }
 
 apiResponse(url)
